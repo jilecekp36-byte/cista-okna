@@ -1,0 +1,63 @@
+ČISTÁ OKNA — web pro Netlify
+Verze 1.1 / 28. října 2026
+Zaměření: Teplice a okolí s dojezdem do 40 km od Teplic.
+
+Obsah balíčku
+dist/ obsahuje celý web: hlavní stránku, logo, styly, JavaScript, ochranu osobních údajů, reklamační řád, potvrzovací stránku, stránku 404, sitemap.xml, robots.txt, přesměrování a HTTP hlavičky. Bez instalace balíčků a bez sestavování.
+
+Samostatný cista-okna-navrh.html je kopie pro prohlédnutí: má vše vložené v sobě, právní dokumenty otevírá v dialogu a nic neodesílá. Pro hosting používejte dist/, nikoliv tento samostatný náhled.
+
+1. Nahrání na Netlify
+Pro ruční nasazení rozbalte ZIP a nahrajte celou složku dist.
+Pro GitHub nahrajte celý obsah projektu včetně netlify.toml. Publish directory: dist. Build command: prázdný.
+
+2. Poptávkový formulář — nezbytné nastavení účtu
+V projektu na Netlify otevřete Forms a zapněte automatickou detekci formulářů. Po zapnutí proveďte nové nasazení. V Active forms se musí objevit formulář poptavka.
+V Forms > Submission notifications > Add notification nastavte e-mail info@cista-okna.eu a formulář poptavka. Tuto volbu samotný ZIP nenastaví.
+Pole email nastaví Reply-to pro odpověď zákazníkovi. Notifikace obvykle přichází z formresponses@netlify.com.
+Ověřte dostupnost Forms a jeho limity ve svém konkrétním tarifu; žádné placené rozšíření nebylo objednáno.
+Po nasazení odešlete označenou testovací poptávku. Zkontrolujte (a) potvrzovací stránku, (b) záznam v Netlify Forms, včetně složky Spam při chybějícím záznamu, (c) doručení na info@cista-okna.eu a možnost odpovědět na e-mail odesílatele. Teprve tím je ověřen celý řetězec. Případnou testovací zprávu zpracujte jako test, nikoliv zákaznickou objednávku.
+Bez aktivní detekce se formulář s JavaScriptem zastaví a nehlásí falešný úspěch. Při síťové chybě nezmizí vyplněné údaje. Bez JavaScriptu se použije standardní HTML odeslání přes Netlify.
+
+3. Doména a přechod ze starého webu
+Výchozí hlavní adresa: https://www.cista-okna.eu/ (zachovává dosavadní doménu).
+V Domain management přidejte www.cista-okna.eu a cista-okna.eu, jako primární vyberte www. Použijte aktuální DNS pokyny konkrétního Netlify projektu a ověřte vydání HTTPS certifikátu.
+Před změnou si uložte současné DNS a původní web. Měňte pouze webové DNS záznamy podle cíle Netlify. MX, SPF, DKIM, DMARC ani další e-mailové záznamy nepřepisujte. Před přesměrováním domény ověřte dočasnou adresu Netlify a funkčnost formuláře.
+Soubor dist/_redirects zachovává adresy /kontakt/, /sluzby/, /o-nas/, /reference/, /galerie/ a staré zásady soukromí. Na skutečném Netlify ověřte 301 přesměrování těchto adres, hlavní www variantu, HTTPS a odpověď 404 u neexistující cesty. Lokální náhled tyto platformní funkce nenapodobuje.
+
+4. Vyhledávače a sdílení
+Hlavní a právní stránky mají canonical, české titulky a popisy, metadata pro sociální sítě a indexaci. Hlavní stránka má strukturovaná data firmy a skutečně nabízených služeb, bez smyšlených hodnocení. Potvrzení a stránka 404 mají noindex.
+Po přepnutí domény odešlete v Google Search Console sitemapu https://www.cista-okna.eu/sitemap.xml a požádejte o kontrolu hlavní stránky. Nová ověřovací značka GSC nebyla vložena, protože nebyla dodána. Stávající ověření přes DNS se přesunem webu nemění.
+Při změně hlavní domény upravte canonical, Open Graph, JSON-LD, robots.txt i sitemap.xml najednou.
+
+5. Osobní údaje a provozní režim
+Zásady jsou připravené pro hosting a příjem poptávek přes Netlify Forms, e-mailovou komunikaci a úklidové zakázky. Netlify zpracovává i mimo EHP; před zahájením sběru údajů musí provozovatel zajistit odpovídající zpracovatelské ujednání (DPA) a záruky přenosů. Smlouva s Netlify nebyla tímto balíčkem uzavřena ani právně potvrzena.
+Zajistěte odpovídající smluvní režim také u e-mailu, účetnictví, IT podpory a případných spolupracovníků. Příjemce jsou v zásadách uvedeni kategoriemi; nevymýšlíme identitu vaší účetní ani poskytovatele e-mailu.
+Navržená provozní pravidla, která musí firma skutečně dodržovat: kopie ve Forms nejvýše 90 dnů, neuzavřené poptávky zpravidla 12 měsíců, běžná dokumentace zakázek zpravidla 3 roky po vypořádání; zákonné doklady a probíhající spory podle pravidel v zásadách. Tyto lhůty jsou nově navrženou politikou, nikoli tvrzením o dosavadní praxi firmy.
+Minimálně jednou měsíčně pověřený pracovník zkontroluje došlé formuláře, převezme potřebnou komunikaci a odstraní kopie starší než 90 dnů; obdobně provádí periodickou kontrolu e-mailových poptávek. ZIP nenastavuje automatické mazání v Netlify ani ve schránce. Pokud je váš proces jiný, před spuštěním změňte proces nebo odpovídající lhůtu v zásadách.
+Web neobsahuje reklamní měření, analytické cookies, externí písma, vložené mapy ani videa, a proto nepřidává zbytečnou souhlasovou lištu. Před přidáním takových služeb aktualizujte informace a případně zaveďte předchozí souhlas.
+Právní texty jsou pracovní právní návrh přizpůsobený tomuto webu, nikoli individuální právní posudek. Před publikací musí odpovídat skutečné organizaci zpracování. Reklamační řád rozlišuje spotřebitele a ostatní objednatele; nevytváří automatickou spotřebitelskou lhůtu pro právnické osoby ani nezkracuje zákonná práva. Web přijímá pouze nezávazné poptávky. Konkrétní nabídka/smlouva řeší cenu, splatnost, termín a případné povinné informace pro spotřebitele při uzavírání smlouvy na dálku.
+
+6. Kontroly provedené před předáním
+Odkazy, unikátní ID a dostupnost všech souborů; validní JSON-LD a sitemap; shoda CSP hashe se strukturovanými daty; syntaktická kontrola JavaScriptu.
+Formulář: lokální odeslání nehlásí úspěch, whitespace se nepovažuje za vyplnění, znaková sada a speciální znaky, zachování údajů při chybě, přesměrování po úspěšné odpovědi a blokace souběžného dvojího odeslání.
+Prohlížeč: hlavní stránka, kontakty, právní stránky a šířky 320, 390, 810 a 1024 px bez vodorovného přesahu. Mobilní menu a čitelnost dokumentů zkontrolované.
+Externí ověření, které je potřeba dokončit po přístupu do Netlify: reálný záznam a e-mail poptávky, produkční HTTP hlavičky a přesměrování, doména/HTTPS. Samotné lokální kontroly toto nenahrazují.
+
+7. Zdroje údajů a právního návrhu (ověřeno 28. 10. 2026)
+ARES: https://ares.gov.cz/ekonomicke-subjekty-v-be/rest/ekonomicke-subjekty/08041563
+Současný kontakt firmy: https://www.cista-okna.eu/kontakt/
+Obchodní rejstřík/spisová značka potvrzena veřejnou fakturou v Registru smluv: https://smlouvy.gov.cz/smlouva/soubor/34118419/Faktura%20-%20%C3%BAklidov%C3%A9%20pr%C3%A1ce.pdf
+Správné PSČ sídla podle ARES je 417 54. Na starém webu byla v patičce hodnota 417 42; do nového webu se nepřebírá.
+ÚOOÚ: https://uoou.gov.cz/profesional/metodiky-a-doporuceni-pro-spravce/metodika-k-plneni-informacni-povinnosti-a-k-souvisejicim-ujednanim-vuci-zakaznikum
+ÚOOÚ cookies: https://uoou.gov.cz/verejnost/qa-otazky-a-odpovedi/cookies
+ČOI reklamace: https://coi.gov.cz/pro-podnikatele/informace-pro-prodejce-zbozi-a-sluzeb/reklamace-zbozi-a-sluzeb/
+ČOI služby: https://coi.gov.cz/faq/smlouva-o-dilo/
+ČOI spotřebitel: https://coi.gov.cz/faq/e-kdyz-nakoupim-na-ico-jsem-spotrebitelem/
+ČOI ADR: https://coi.gov.cz/informace-o-adr/
+Účetnictví: https://financnisprava.gov.cz/cs/dane/dane/dan-z-prijmu/ucetnictvi/obecne-informace
+Netlify: https://docs.netlify.com/manage/forms/setup/ a https://docs.netlify.com/manage/forms/notifications/
+Netlify ochrana dat: https://www.netlify.com/privacy/ a https://www.netlify.com/trust-center/
+
+Design a reference
+Použito skutečné logo dodané uživatelem, beze změny jeho kresby. Ilustrace nepředstavují fotografie konkrétní realizace. Reference a popis společnosti vycházejí ze zadání Petra Jilečka. Žádná smyšlená recenze, počet zákazníků, certifikace nebo garantovaná kapacita.

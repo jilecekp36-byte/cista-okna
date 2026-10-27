@@ -1,0 +1,5 @@
+[build]
+  publish = "dist"
+
+# The site is static: no build command and no external dependencies.
+# Netlify Forms detection and submission notifications are enabled in the Netlify UI.
