@@ -1,0 +1,21 @@
+ČISTÁ OKNA — BAREVNÁ FAVICONA
+Aktualizace 29. 10. 2026
+
+1. Rozbalte ZIP.
+2. Otevřete https://github.com/jilecekp36-byte/cista-okna
+3. V hlavní složce repozitáře klikněte Add file → Upload files.
+4. Přetáhněte celou složku dist z tohoto balíčku do nahrávacího pole.
+   Nahrávejte z hlavní složky repozitáře, aby nevzniklo dist/dist.
+   Existující složku dist ani ostatní soubory nemažte.
+5. Klikněte Commit changes. Netlify změnu automaticky zveřejní.
+6. Po dokončení nasazení zavřete a znovu otevřete záložku webu.
+   Prohlížeč může starou ikonu ještě dočasně držet v mezipaměti.
+
+Balíček obsahuje pouze pět HTML stránek s upravenými odkazy na ikonu
+a tři nové soubory ikon. Texty, formulář, skripty, styly, původní logo,
+DNS, e-maily a nastavení Netlify se nemění.
+
+Ikona: původní kompletní barevné logo Čistá okna na bílém podkladu.
+Logo není překreslené ani zjednodušené; mění se pouze velikost a formát.
+Formáty: PNG 96×96, ICO 16/32/48/64/256, Apple touch icon 180×180.
+Zdrojová verze na GitHubu: 6ae9408785cf2f93271021f3162478a4afd0b4ab
